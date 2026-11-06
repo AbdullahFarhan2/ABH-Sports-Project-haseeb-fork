@@ -227,3 +227,85 @@
 .admin-modal-actions .admin-action:disabled{opacity:.6;cursor:wait}
 .admin-modal-open{overflow:hidden}
 @media(max-width:700px){.admin-product-toolbar{align-items:flex-start;flex-direction:column}.admin-add-trigger{width:100%;justify-content:center}.admin-product-filters{align-items:stretch;flex-direction:column}.admin-product-filters>select{width:100%}.admin-product-modal{padding:20px 16px}.admin-product-form{grid-template-columns:1fr}.admin-product-form .wide{grid-column:auto}.admin-image-options{grid-template-columns:1fr}.admin-image-options>span{display:none}.admin-pagination{align-items:flex-start;flex-direction:column}.admin-pagination>div{width:100%;justify-content:space-between}}
+
+
+/* ABH admin — improved readability and comfortable sizing */
+.admin-page{font-size:16px;line-height:1.6}
+.admin-main{font-size:15px}
+.admin-sidebar-brand strong{font-size:18px}
+.admin-sidebar-brand small{font-size:11px}
+.admin-sidebar-label{font-size:11px}
+.admin-side-nav button{font-size:14px;min-height:46px}
+.admin-nav-icon{font-size:19px}
+.admin-sidebar-note strong{font-size:13px}
+.admin-sidebar-note small{font-size:11px}
+.admin-back-store{font-size:13px}
+.admin-topbar .eyebrow,.admin-section-heading .eyebrow,.admin-card-heading .eyebrow{font-size:12px;line-height:1.5}
+.admin-topbar h1{font-size:clamp(36px,4.2vw,52px)}
+.admin-connection{font-size:13px}
+.admin-view-store,.admin-signout{font-size:12px;padding:11px 15px}
+.admin-section-heading h2{font-size:38px}
+.admin-section-heading>div>p:last-child{font-size:14px;line-height:1.6}
+.admin-updated{font-size:12px}
+.admin-stat{min-height:130px;padding:21px}
+.admin-stat span{font-size:12px;line-height:1.5;letter-spacing:.7px}
+.admin-stat strong{font-size:36px}
+.admin-content-card{padding:23px}
+.admin-card-heading h3,.admin-quick-card h3{font-size:26px}
+.admin-inline-link{font-size:12px}
+.admin-quick-card>.eyebrow{font-size:11px}
+.admin-quick-card>p:not(.eyebrow){font-size:14px;line-height:1.7}
+.admin-quick-card>button,.admin-quick-card>a{font-size:13px;padding:14px}
+.admin-search input{font-size:14px}
+.admin-product-toolbar{padding:21px 22px}
+.admin-catalogue-count{font-size:23px}
+.admin-product-toolbar p{font-size:13px;line-height:1.6}
+.admin-add-trigger{font-size:13px;padding:14px 19px}
+.admin-product-filters>select{font-size:13px;padding:12px 14px}
+.admin-product-cell strong{font-size:13px}
+.admin-product-cell small{font-size:11px}
+.admin-stock,.admin-visibility{font-size:11px;padding:7px 10px}
+.admin-row-actions button{font-size:11px;padding:9px 12px}
+.admin-pagination{font-size:12px}
+.admin-pagination button{font-size:11px;padding:9px 12px}
+.admin-table th{font-size:11px;padding:15px 14px}
+.admin-table td{font-size:13px;line-height:1.6;padding:16px 14px}
+.admin-table td small{font-size:11px}
+.admin-table input,.admin-table select{font-size:13px;padding:10px}
+.admin-table .admin-action{font-size:11px}
+.admin-footer{font-size:11px;line-height:1.6}
+.admin-message{font-size:14px;line-height:1.6}
+.admin-login-modern{padding:42px}
+.admin-login-modern>.eyebrow{font-size:11px}
+.admin-login-modern h1{font-size:52px}
+.admin-login-copy{font-size:14px;line-height:1.75}
+.admin-login-modern .admin-form label{font-size:13px}
+.admin-login-modern .admin-form input{font-size:15px;padding:15px}
+.admin-login-modern .admin-form .admin-action{font-size:13px;min-height:48px}
+.admin-login-foot{font-size:11px}
+.admin-modal-header .eyebrow{font-size:11px}
+.admin-modal-header h2{font-size:35px}
+.admin-modal-header p:last-child{font-size:13px;line-height:1.6}
+.admin-modal-close{width:39px;height:39px;font-size:25px}
+.admin-product-form label{font-size:13px;line-height:1.5}
+.admin-product-form input,.admin-product-form select,.admin-product-form textarea{font-size:14px;padding:13px 14px;min-height:44px}
+.admin-image-options>span,.admin-image-field>small{font-size:11px}
+.admin-image-options input[type=file]{font-size:12px}
+.admin-image-preview button{font-size:12px}
+.admin-modal-message{font-size:13px;line-height:1.5}
+.admin-modal-cancel,.admin-modal-actions .admin-action{font-size:12px;padding:13px 18px}
+@media(max-width:700px){
+ .admin-main{font-size:14px}
+ .admin-side-nav button{font-size:12px}
+ .admin-section-heading h2{font-size:34px}
+ .admin-stat{min-height:108px;padding:15px}
+ .admin-stat span{font-size:11px}
+ .admin-stat strong{font-size:30px}
+ .admin-content-card{padding:16px}
+ .admin-table th{font-size:10px}
+ .admin-table td{font-size:12px;padding:13px 10px}
+ .admin-product-form label{font-size:12px}
+ .admin-product-form input,.admin-product-form select,.admin-product-form textarea{font-size:14px}
+ .admin-login-modern{padding:28px 21px}
+ .admin-login-modern h1{font-size:45px}
+}
