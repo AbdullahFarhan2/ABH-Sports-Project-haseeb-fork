@@ -19,3 +19,43 @@
 .admin-form label{font-size:13px}
 .admin-table th,.admin-table td{font-size:13px}
 @media(max-width:600px){.portal-product-image{flex-basis:220px}.portal-product-copy{padding:18px}.portal-product-copy h2{font-size:1.6rem}.portal-product-copy p{font-size:14px}}
+
+
+/* ABH SPORTS — portal typography and form readability */
+.portal-page{font-size:16px;line-height:1.6}
+.portal-page .announcement{font-size:11px}
+.portal-page .main-navigation{font-size:11px}
+.portal-page .main-navigation .nav-link{font-size:inherit}
+.portal-page .text-button,.portal-page .cart-button{font-size:11px}
+.portal-intro .eyebrow,.portal-page .eyebrow{font-size:11px;line-height:1.5}
+.portal-intro>p:last-child{font-size:16px;line-height:1.75}
+.portal-toolbar input,.portal-toolbar select,.portal-results select{font-size:15px;line-height:1.4}
+.portal-results{font-size:15px;line-height:1.5}
+.portal-product-copy>small{font-size:12px;line-height:1.55}
+.portal-product-copy h2{font-size:1.8rem;line-height:1.15}
+.portal-product-copy p{font-size:15px;line-height:1.7}
+.portal-product-copy strong{font-size:1.25rem}
+.portal-product-copy button,.pagination button,.admin-action{font-size:14px;line-height:1.35}
+.portal-footnote{font-size:13px;line-height:1.6}
+.admin-heading h2,.admin-login h2{font-size:2.15rem}
+.admin-heading .eyebrow{font-size:11px}
+.admin-stat span{font-size:12px;line-height:1.5}
+.admin-stat strong{font-size:2.2rem}
+.admin-tabs button{font-size:13px;padding:12px 17px}
+.admin-form label{font-size:14px;line-height:1.5}
+.admin-form input,.admin-form select,.admin-form textarea{font-size:15px;line-height:1.4;padding:14px}
+.admin-table th,.admin-table td{font-size:14px;line-height:1.55;padding:14px}
+.admin-table th{font-size:12px}
+.admin-table small{font-size:12px}
+.admin-message{font-size:14px;line-height:1.6}
+@media(max-width:600px){
+ .portal-page{font-size:15px}
+ .portal-intro>p:last-child{font-size:15px}
+ .portal-product-copy h2{font-size:1.65rem}
+ .portal-product-copy p{font-size:14px}
+ .portal-product-copy strong{font-size:1.15rem}
+ .admin-form label{font-size:13px}
+ .admin-table th,.admin-table td{font-size:13px;padding:12px 10px}
+ .admin-table th{font-size:11px}
+ .admin-tabs button{font-size:12px}
+}
