@@ -200,3 +200,68 @@ td button{font-size:11px}
 .nav-dropdown-menu a{font-size:12px;padding:10px 12px}
 @media(max-width:900px){.site-header>.brand{font-size:27px}.site-header>.main-navigation{gap:12px}.site-header .nav-link,.site-header .text-button,.site-header .cart-button{font-size:9px}}
 @media(max-width:640px){.site-header{padding-top:10px}.site-header>.brand{font-size:27px}.site-header>.main-navigation{padding-top:9px;padding-bottom:9px}.site-header .nav-link{font-size:10px}.site-header .text-button,.site-header .cart-button{font-size:9px}}
+
+
+/* Responsive, equal-height homepage grids */
+.category-showcase{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-auto-rows:1fr;
+  align-items:stretch;
+  gap:16px;
+}
+.category-feature,
+.category-feature-large{
+  grid-row:auto;
+  height:100%;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+}
+.category-feature .category-art,
+.category-feature-large .category-art{
+  height:auto;
+  aspect-ratio:1.18 / 1;
+  flex:1 1 auto;
+  min-height:170px;
+}
+.category-feature .category-caption{min-height:105px;align-content:center}
+.category-caption strong{overflow-wrap:anywhere}
+.landing-product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  align-items:stretch;
+  gap:24px 16px;
+}
+.landing-product-grid .product-card{
+  width:100%;
+  min-width:0;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.landing-product-grid .product-visual{
+  width:100%;
+  height:auto;
+  aspect-ratio:1 / 1;
+  flex:0 0 auto;
+}
+.landing-product-grid .product-info{
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+}
+.landing-product-grid .product-info h3{flex:1 1 auto}
+@media(max-width:1100px){
+  .category-showcase,.landing-product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  .category-showcase,.landing-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .popular-section,.arrival-section{padding:56px 5%}
+  .category-feature .category-art,.category-feature-large .category-art{min-height:145px}
+}
+@media(max-width:430px){
+  .category-showcase,.landing-product-grid{grid-template-columns:1fr}
+  .category-feature .category-art,.category-feature-large .category-art{aspect-ratio:1.45 / 1;min-height:0}
+  .landing-product-grid .product-visual{aspect-ratio:1.15 / 1}
+}
