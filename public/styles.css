@@ -265,3 +265,34 @@ td button{font-size:11px}
   .category-feature .category-art,.category-feature-large .category-art{aspect-ratio:1.45 / 1;min-height:0}
   .landing-product-grid .product-visual{aspect-ratio:1.15 / 1}
 }
+
+
+/* Homepage: center and enlarge short 3-item product rows */
+#newArrivalsGrid,
+#featuredGrid{
+  width:100%;
+  max-width:1240px;
+  margin-inline:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),380px));
+  justify-content:center;
+  align-items:stretch;
+  gap:28px 22px;
+}
+#newArrivalsGrid .product-card,
+#featuredGrid .product-card{
+  width:100%;
+  max-width:380px;
+  justify-self:center;
+}
+#newArrivalsGrid .product-visual,
+#featuredGrid .product-visual{
+  aspect-ratio:1 / 1;
+}
+@media(max-width:640px){
+  #newArrivalsGrid,
+  #featuredGrid{
+    grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),340px));
+    gap:22px 14px;
+  }
+}
