@@ -93,29 +93,16 @@
           <div class="admin-section-heading">
             <div><p class="eyebrow">CATALOGUE <span>/</span> INVENTORY</p><h2>Products</h2><p>Add new items and keep product information up to date.</p></div>
           </div>
-          <section class="portal-card admin-content-card admin-add-card">
-            <div class="admin-card-heading"><div><p class="eyebrow">CATALOGUE MANAGEMENT</p><h3>Add a product</h3></div><span class="admin-card-index">01 / NEW ITEM</span></div>
-            <form id="productForm" class="admin-form">
-              <label>PRODUCT NAME<input name="name" required placeholder="e.g. Pro English Willow Bat"></label>
-              <label>CATEGORY<select name="category"><option>Bats</option><option>Batting Gloves</option><option>Batting Pads</option><option>Guard</option><option>Wicketkeeping</option><option>Helmets</option><option>Caps</option><option>Kit Bag</option><option>Shoes</option></select></label>
-              <label>PRICE (PKR)<input name="price" type="number" min="0" step="1" required placeholder="0"></label>
-              <label>STOCK QUANTITY<input name="stock" type="number" min="0" step="1" required placeholder="0"></label>
-              <label>SUBCATEGORY<input name="subcategory" placeholder="Optional"></label>
-              <label>IMAGE URL<input name="image" type="url" placeholder="https://... (optional)"></label>
-              <label class="wide">DESCRIPTION<textarea name="description" rows="3" placeholder="Add a short product description"></textarea></label>
-              <label>COLOURS<input name="colours" placeholder="Black, White, Red"></label>
-              <label>SIZES / VARIATIONS<input name="sizes" placeholder="S, M, L, XL"></label>
-              <label class="admin-featured-label wide"><span><input name="featured" type="checkbox"> Feature this product on the store</span></label>
-              <button class="admin-action wide" type="submit">ADD PRODUCT <span>＋</span></button>
-            </form>
-            <p id="productMessage" class="admin-message" role="status"></p>
-          </section>
+          <div class="admin-product-toolbar">
+            <div><span class="admin-catalogue-count" id="productCount">0 products</span><p>Keep your cricket catalogue accurate and up to date.</p></div>
+            <button class="admin-action admin-add-trigger" id="openAddProduct" type="button"><span>＋</span> ADD PRODUCT</button>
+          </div>
           <section class="admin-catalogue-section">
             <div class="admin-section-heading admin-section-heading-inline">
               <div><p class="eyebrow">ALL STORE ITEMS</p><h2>Product catalogue</h2></div>
-              <label class="admin-search"><span>⌕</span><input id="productSearch" type="search" placeholder="Search products..." aria-label="Search products"></label>
+              <div class="admin-product-filters"><label class="admin-search"><span>⌕</span><input id="productSearch" type="search" placeholder="Search products..." aria-label="Search products"></label><select id="productCategoryFilter" aria-label="Filter by category"><option value="">All categories</option><option>Bats</option><option>Batting Gloves</option><option>Batting Pads</option><option>Guard</option><option>Wicketkeeping</option><option>Helmets</option><option>Caps</option><option>Kit Bag</option><option>Shoes</option></select></div>
             </div>
-            <div class="portal-card admin-content-card admin-table-wrap"><table class="admin-table"><thead><tr><th>PRODUCT</th><th>PRICE</th><th>STOCK</th><th>ACTIONS</th></tr></thead><tbody id="productRows"></tbody></table></div>
+            <div class="portal-card admin-content-card admin-table-wrap"><table class="admin-table admin-products-table"><thead><tr><th>PRODUCT</th><th>PRICE</th><th>STOCK STATUS</th><th>VISIBILITY</th><th>ACTIONS</th></tr></thead><tbody id="productRows"></tbody></table></div><div class="admin-pagination" id="productPagination"></div>
           </section>
         </section>
 
@@ -132,6 +119,25 @@
       </div>
     </section>
   </main>
+    <div class="admin-modal-backdrop" id="productModal" aria-hidden="true">
+      <section class="admin-product-modal" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+        <header class="admin-modal-header"><div><p class="eyebrow" id="productModalEyebrow">CATALOGUE MANAGEMENT</p><h2 id="productModalTitle">Add a product</h2><p>Enter the product information below.</p></div><button type="button" class="admin-modal-close" id="closeProductModal" aria-label="Close">×</button></header>
+        <form id="productForm" class="admin-form admin-product-form">
+          <label class="wide">PRODUCT NAME<input name="name" required maxlength="120" placeholder="e.g. Pro English Willow Bat"></label>
+          <label>CATEGORY<select name="category" required><option value="Bats">Bats</option><option>Batting Gloves</option><option>Batting Pads</option><option>Guard</option><option>Wicketkeeping</option><option>Helmets</option><option>Caps</option><option>Kit Bag</option><option>Shoes</option></select></label>
+          <label>SUBCATEGORY<input name="subcategory" maxlength="80" placeholder="e.g. English Willow"></label>
+          <label>PRICE (PKR)<input name="price" type="number" min="0" step="1" required placeholder="0"></label>
+          <label>STOCK QUANTITY<input name="stock" type="number" min="0" step="1" required placeholder="0"></label>
+          <label class="wide">DESCRIPTION<textarea name="description" rows="3" maxlength="1000" placeholder="Product details and features"></textarea></label>
+          <label>COLOURS<input name="colours" placeholder="Black, White, Red"></label>
+          <label>SIZES / VARIATIONS<input name="sizes" placeholder="S, M, L, XL"></label>
+          <div class="wide admin-image-field"><label for="productImageFile">PRODUCT IMAGE</label><div class="admin-image-options"><input id="productImageFile" name="imageFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><span>OR</span><input name="imageUrl" type="url" placeholder="Paste an image URL (optional)"></div><div class="admin-image-preview" id="productImagePreviewWrap" hidden><img id="productImagePreview" alt="Product image preview"><button type="button" id="removeProductImage">Remove image</button></div><small>PNG, JPG, WEBP or GIF · Maximum 5 MB</small></div>
+          <label class="wide admin-featured-label"><span><input name="featured" type="checkbox"> Feature this product on the store</span></label>
+          <p class="admin-modal-message wide" id="productFormMessage" role="status"></p>
+          <footer class="admin-modal-actions wide"><button type="button" class="admin-modal-cancel" id="cancelProductModal">CANCEL</button><button type="submit" class="admin-action" id="saveProductButton">SAVE PRODUCT <span>↗</span></button></footer>
+        </form>
+      </section>
+    </div>
   <script src="admin.js"></script>
 </body>
 </html>
